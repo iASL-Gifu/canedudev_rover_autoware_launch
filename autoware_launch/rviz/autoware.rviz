@@ -162,7 +162,7 @@ Visualization Manager:
                   Alpha: 0.999
                   Show Axes: false
                   Show Trail: false
-                tamagawa/imu_link:
+                xsens/imu_link:
                   Alpha: 0.999
                   Show Axes: false
                   Show Trail: false
