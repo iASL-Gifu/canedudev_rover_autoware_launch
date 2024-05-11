@@ -25,7 +25,7 @@
   <!-- Global parameters -->
   <arg name="use_sim_time" default="false" description="use_sim_time"/>
   <!-- Vehicle -->
-  <arg name="vehicle_id" default="$(env VEHICLE_ID default)" description="vehicle specific ID"/>
+  <arg name="vehicle_id" default="canedudev_rover_vehicle_1" description="vehicle specific ID"/>
   <arg name="launch_vehicle_interface" default="true" description="launch vehicle interface"/>
   <!-- Control -->
   <arg name="check_external_emergency_heartbeat" default="false"/>
@@ -71,7 +71,7 @@
       <arg name="launch_vehicle_interface" value="$(var launch_vehicle_interface)"/>
       <arg name="config_dir" value="$(find-pkg-share individual_params)/config/$(var vehicle_id)/$(var sensor_model)"/>
       <arg name="raw_vehicle_cmd_converter_param_path" value="$(find-pkg-share autoware_launch)/config/vehicle/raw_vehicle_cmd_converter/raw_vehicle_cmd_converter.param.yaml"/>
-      <arg name="model_file" value="$(find-pkg-share canedudev_rover_vehicle_description)/urdf/vehicle.xacro"/>
+      <!-- <arg name="model_file" value="$(find-pkg-share canedudev_rover_vehicle_description)/urdf/vehicle.xacro"/> -->
     </include>
   </group>
 
