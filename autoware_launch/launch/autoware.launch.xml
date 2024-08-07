@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <launch>
   <!-- Essential parameters -->
-  <arg name="map_path" default="$(env HOME)/autoware_map/sample-map-planning/" description="point cloud and lanelet2 map directory path"/>
+  <arg name="map_path" description="point cloud and lanelet2 map directory path"/>
   <arg name="vehicle_model" default="canedudev_rover_vehicle" description="vehicle model name"/>
   <arg name="sensor_model" default="canedudev_rover_sensor_kit" description="sensor model name"/>
   <arg name="pointcloud_container_name" default="pointcloud_container"/>
@@ -92,7 +92,13 @@
 
   <!-- Localization -->
   <group if="$(var launch_localization)">
-    <include file="$(find-pkg-share autoware_launch)/launch/components/tier4_localization_component.launch.xml"/>
+    <include file="$(find-pkg-share autoware_launch)/launch/components/tier4_localization_component.launch.xml">
+      <arg name="ndt_enabled" value="true"/>
+      <arg name="gnss_enabled" value="false"/>
+      <arg name="ekf_enabled" value="true"/>
+      <arg name="yabloc_enabled" value="false"/>
+      <arg name="stop_check_enabled" value="false"/>
+    </include>
   </group>
 
   <!-- Perception -->
